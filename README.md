@@ -16,30 +16,47 @@ To post to the forum you can either use the web interface or email to isonet@goo
 
 
 ## Installation
+
 python version at least 3.5 is required. If you download the package as a zip file from github, please rename the folder IsoNet-master to IsoNet.
-
-1.  IsoNet relies on Tensorflow with version at least 2.0
-
 Please find your cuda version, cuDNN version and corresponding tensorflow version here: https://www.tensorflow.org/install/source#gpu. 
-
 For example, if you are using cude 10.1, you should install tensorflow 2.3:
-```
-pip install tensorflow-gpu==2.3.0
-```
 
-2.  Install other dependencies
+1. Create a new python environment, here `conda` is used, but virtualenv would work as well if you install the cudatoolkit and cudnn yourself.
 
 ```
-pip install -r requirements.txt
+conda create -n isonet -c conda-forge python cudatoolkit=11.0 cudnn=8.0 tensorflow-gpu=2 mrcfile scipy fire tqdm pyqt scikit-image=0.17.2
+```
+
+2. Activate the environment
+
+```
+conda activate isonet
+```
+
+3. Clone the repository
+
+```
+git clone https://github.com/IsoNet-cryoET/IsoNet
+```
+
+4. Change to the repository
+
+```
+cd IsoNet
+```
+
+5.  Install the package
+
+```
+pip install -e .
 ```
 3.  Add environment variables: 
 
 For example add following lines in your ~/.bashrc
 ```
-export PATH=PATH_TO_ISONET_FOLDER/bin:$PATH 
-
-export PYTHONPATH=PATH_TO_PARENT_FOLDER_OF_ISONET_FOLDER:$PYTHONPATH 
+echo "export PATH=\${PATH}:${CONDA_PREFIX}/bin" >> ~/.bashrc
 ```
+
 4. Open a new terminal, enter your working directory and run 
 ```
 isonet.py check
