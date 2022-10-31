@@ -7,3 +7,4 @@ IsoNet.egg-info/
 */__pycache_
 */*/__pycache___
 .vscode
+**/_version.py
