@@ -24,7 +24,7 @@ For example, if you are using cude 10.1, you should install tensorflow 2.3:
 1. Create a new python environment, here `conda` is used, but virtualenv would work as well if you install the cudatoolkit and cudnn yourself.
 
 ```
-conda create -n isonet -c conda-forge python cudatoolkit=11.0 cudnn=8.0 tensorflow-gpu=2 mrcfile scipy fire tqdm pyqt scikit-image=0.17.2
+conda create -n isonet -c conda-forge python cudatoolkit cudnn tensorflow-gpu=2 mrcfile scipy fire tqdm pyqt scikit-image=0.17.2
 ```
 
 2. Activate the environment
